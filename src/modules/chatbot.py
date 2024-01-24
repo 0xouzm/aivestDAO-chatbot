@@ -223,6 +223,10 @@ class Chatbot:
 
         st.session_state["history"].append((query, result["answer"]))
 
+        if (query.lower() == 'launch'):
+
+            return ('You have successfully launched your tokenized model! Tell your friends to come to the "Fair Launch" 🛫buy your token, and leverage your crypto investment insights!')
+
         if len_history < 5:
 
             return result['answer']
