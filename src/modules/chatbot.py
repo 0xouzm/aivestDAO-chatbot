@@ -192,7 +192,7 @@ class Chatbot:
 
         qa_template = """
         You are a financial expert with crypto market experience.
-        If question contains address, use all info in the final_str to answer the question.
+        If question contains address, use all info in the final_str to answer the question and include monthly return, sharpe ratio and max drawdown in the answer .
         Output investing style with bullet points.
         Output the records from the JSON data and format it as table with Weight, Monthly Return and Max Drawdown in percentage, Latest Price and Latest Market Cap in float.
         Using the chatgpt to answer the question if no relevant context is found.
