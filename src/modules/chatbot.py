@@ -48,7 +48,7 @@ class Chatbot:
 
             data_history = data['historyData']
 
-        except ValueError:
+        except:
 
             return ('There is something wrong with network, please come back to the conversation later')
 
