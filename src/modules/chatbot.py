@@ -39,11 +39,22 @@ class Chatbot:
             'Host': '13.212.166.126:3000',
             'Connection': 'keep-alive'
         }
-        response = requests.request("GET", url, headers=headers, data=payload)
 
-        data = json.loads(response.text)
+        try:
 
-        data_history = data['historyData']
+            response = requests.request("GET", url, headers=headers, data=payload)
+
+            data = json.loads(response.text)
+
+            data_history = data['historyData']
+
+        except ValueError:
+
+            return ('There is something wrong with network, please come back to the conversation later')
+
+        if (query.lower() == 'launch'):
+
+            return ('You have successfully launched your tokenized model! Tell your friends to come to the "Fair Launch" 🛫buy your token, and leverage your crypto investment insights!')
 
         half = len(data_history) // 2
 
@@ -222,10 +233,6 @@ class Chatbot:
         result = chain(chain_input)
 
         st.session_state["history"].append((query, result["answer"]))
-
-        if (query.lower() == 'launch'):
-
-            return ('You have successfully launched your tokenized model! Tell your friends to come to the "Fair Launch" 🛫buy your token, and leverage your crypto investment insights!')
 
         if len_history < 5:
 
