@@ -208,7 +208,7 @@ class Chatbot:
         Output the records from the JSON data and format it as a markdown formatted table instead of a code-box with Weight, Monthly Return and Max Drawdown in 2 digits percentage, Latest Price and Latest Market Cap in float.
         Using the chatgpt to answer the question if no relevant context is found.
         Include the sentence "Disclaimer: The crypto market is risky, investing should be approached cautiously." wih a new line if and only if the question is related to investment.
-        Include the sentence "Next action: Kindly tell me 'Launch', once you are ready to tokenize and fair launch your portfolio model.🚀" with a new line at the end. 
+        Include the sentence "Next action: Kindly tell me 'Launch', once you are ready to tokenize and fair launch your portfolio model.🚀" with a new line at the end if the question contains address. 
         context: {context}
         final_str: {final_str}
         =========
